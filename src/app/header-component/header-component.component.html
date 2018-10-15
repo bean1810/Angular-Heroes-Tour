@@ -1,0 +1,29 @@
+<!--NavBar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark scrolling-navbar ie-nav red"
+            [containerInside]="false">
+    <mdb-navbar-brand>
+        <a class="logo navbar-brand" href="#"><img src="../../assets/images/logo/logo.png" alt=""></a>
+    </mdb-navbar-brand>
+    <links>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active waves-light" mdbWavesEffect routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">
+                <a class="nav-link" routerLink="/dashboard">DashBoard<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item waves-light" mdbWavesEffect routerLinkActive="active">
+                <a class="nav-link" routerLink="/heroesList">Heroes List</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav nav-flex-icons">
+            <li class="nav-item md-form">
+                <i class="fa fa-search text-white prefix d-inline-block"></i>
+                <input mdbInputDirective type="text" id="form2" class="form-control">
+                <label for="form2" class="text-white">Search Heroes</label>
+            </li>
+            <li class="nav-item waves-light d-inline-block" mdbWavesEffect>
+                <a class="nav-link"><i class="fa fa-github"></i></a>
+            </li>
+        </ul>
+    </links>
+</mdb-navbar>
+
+<!--/NavBar-->

@@ -1,0 +1,13 @@
+mdb-navbar .logo img {
+  width: 50px;
+  height: auto; }
+mdb-navbar .md-form {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important; }
+  mdb-navbar .md-form input {
+    caret-color: #fff; }
+    mdb-navbar .md-form input:focus {
+      border-bottom: 1px solid #fff;
+      box-shadow: 0 1px 0 0 #fff; }
+
+/*# sourceMappingURL=header-component.component.css.map */

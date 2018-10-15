@@ -1,0 +1,18 @@
+<!-- Card -->
+<mdb-card>
+  <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+    <!-- Card img -->
+    <img src="{{heroProperties.imagesList}}" alt="" class="img-responsive img-fluid img--height">
+    <a> <div class="mask"></div> </a>
+  </div>
+  <!--Card content-->
+  <mdb-card-body>
+    <!--Title-->
+    <mdb-card-title> <h4>{{heroProperties.realName}}</h4> </mdb-card-title>
+    <!--Text-->
+    <mdb-card-text>{{heroProperties.summary}}</mdb-card-text>
+
+    <a href="#" class="btn btn-primary waves-light" mdbWavesEffect>Edit</a>
+    <a href="#" class="btn btn-danger waves-light" mdbWavesEffect>Delete</a>
+  </mdb-card-body>
+</mdb-card>

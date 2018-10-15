@@ -1,0 +1,37 @@
+.dashboard-content-items{
+  margin:0 auto;
+}
+.avatar {
+  img {
+    width: 50px;
+    height: auto;
+  }
+  #heroes-name{
+    font-size: 14px;
+    left: 75px;
+    top: 18px;
+  }
+  #real-name{
+    font-size: 12px;
+    left: 75px;
+    top: 35px;
+  }
+}
+.card-header{
+  .lover{
+    line-height:50px;
+    span{
+      margin-left: 7px;
+    }
+  }
+}
+.card-body{
+  padding: 0;
+  .heroes-images{
+    img{
+      margin: 0;
+      min-width: 100%;
+    }
+  }
+}
+
