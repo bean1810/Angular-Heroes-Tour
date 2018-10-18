@@ -11,6 +11,7 @@ import {MessagesService} from '../messages-services/messages.service';
 })
 export class HeroService {
     private heroesUrl = 'api/heroes';
+    private heroesListUrl = 'api/heroesList';
 
     /*Url to web api*/
     constructor(private http: HttpClient, private messageService: MessagesService) {
@@ -27,12 +28,15 @@ export class HeroService {
         const url = `${this.heroesUrl}/${id}`;
         return this.http.get<HeroInterFaces>(url).pipe(
             tap(heroes => this.log(`fetched hero : ${heroes}`)),
-            catchError(this.handleError<HeroInterFaces>('getHeroDetail', []))
+            catchError(this.handleError<HeroInterFaces>('getHeroDetail'))
         );
     }
 
     getHeroList(): Observable<HeroInterFaces[]> {
-
+        return this.http.get<HeroInterFaces[]>(this.heroesListUrl).pipe(
+            tap(heroes => this.log(`fetched list heroes : ${heroes}`)),
+            catchError(this.handleError('getListHeroes', []))
+        );
     }
 
     /** Log a HeroService message with the MessageService */
