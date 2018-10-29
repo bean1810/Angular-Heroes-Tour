@@ -5,8 +5,11 @@ export class HeroInterFaces {
     color: any;
     realName: any;
     lover: number;
-    images: any;
+    imagesDashboard: any;
     summary?: any;
     rank?: number;
     imagesList?: any;
+    imagesDetail?: any;
+    Dob?: any;
+    Characteristics?: Array<any>;
 }

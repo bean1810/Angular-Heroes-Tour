@@ -1,3 +1,25 @@
+.container {
+  margin: 5% auto; }
 
+.card {
+  box-shadow: none; }
+  .card.card-cascade .view {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px; }
+    .card.card-cascade .view.view-cascade {
+      box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15); }
+  .card.card-cascade.wider .card-body.card-body-cascade {
+    background: #fff;
+    margin-left: 4%;
+    margin-right: 4%; }
+  .card.card-cascade.wider.reverse .card-body.card-body-cascade {
+    margin-top: -1rem;
+    z-index: 10;
+    border-radius: .25rem;
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15); }
+
+.introduce {
+  margin: 5% 2%; }
 
 /*# sourceMappingURL=heroes-detail.component.css.map */

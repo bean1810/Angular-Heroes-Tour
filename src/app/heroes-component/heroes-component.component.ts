@@ -1,14 +1,13 @@
 import {Component, OnInit} from '@angular/core';
-import {HEROES} from './mock-heroes';
 import {HeroInterFaces} from './hero-interfaces';
 import {HeroService} from '../app-services/hero-services/hero.service';
 
 @Component({
-    selector: 'app-itemspanel-component',
+    selector: 'app-heroes-component',
     templateUrl: './heroes-component.component.html',
     styleUrls: ['./heroes-component.component.scss']
 })
-export class ItemspanelComponentComponent implements OnInit {
+export class HeroesComponentComponent implements OnInit {
     heroes: HeroInterFaces[];
 
     constructor(private HeroServices: HeroService) {

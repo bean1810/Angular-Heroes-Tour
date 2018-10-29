@@ -4,8 +4,8 @@ import {MDBBootstrapModule} from 'angular-bootstrap-md';
 import {AppComponent} from './app.component';
 import { HeaderComponentComponent } from './header-component/header-component.component';
 import { FooterComponentComponent } from './footer-component/footer-component.component';
-import { DashboardComponentComponent } from './dashboard-component/dashboard-component.component';
-import { ItemspanelComponentComponent } from './heroes-component/heroes-component.component';
+import { DashboardComponent } from './dashboard-component/dashboard-component.component';
+import { HeroesComponentComponent } from './heroes-component/heroes-component.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { HeroesListComponentComponent } from './heroes-list-component/heroes-list-component.component';
 import { CardItemComponent } from './card-item/card-item.component';
@@ -20,8 +20,8 @@ import {InMemoryDataService} from './app-services/in-memory-data-service/in-memo
         AppComponent,
         HeaderComponentComponent,
         FooterComponentComponent,
-        DashboardComponentComponent,
-        ItemspanelComponentComponent,
+        DashboardComponent,
+        HeroesComponentComponent,
         HeroesListComponentComponent,
         CardItemComponent,
         HeroesDetailComponent,

@@ -1,9 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HeroInterFaces} from '../../heroes-component/hero-interfaces';
-import {HEROES} from '../../heroes-component/mock-heroes';
 import {Observable, of} from 'rxjs';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {catchError, tap, map} from 'rxjs/internal/operators';
+import {HttpClient} from '@angular/common/http';
+import {catchError, tap} from 'rxjs/internal/operators';
 import {MessagesService} from '../messages-services/messages.service';
 
 @Injectable({
@@ -12,6 +11,7 @@ import {MessagesService} from '../messages-services/messages.service';
 export class HeroService {
     private heroesUrl = 'api/heroes';
     private heroesListUrl = 'api/heroesList';
+    private heroesDetailUrl = 'api/heroesDetail';
 
     /*Url to web api*/
     constructor(private http: HttpClient, private messageService: MessagesService) {
@@ -25,7 +25,7 @@ export class HeroService {
     }
 
     getHeroDetail(id: number): Observable<HeroInterFaces> {
-        const url = `${this.heroesUrl}/${id}`;
+        const url = `${this.heroesDetailUrl}/${id}`;
         return this.http.get<HeroInterFaces>(url).pipe(
             tap(heroes => this.log(`fetched hero : ${heroes}`)),
             catchError(this.handleError<HeroInterFaces>('getHeroDetail'))

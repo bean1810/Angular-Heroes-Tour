@@ -1,5 +1,5 @@
 {
-  "compileOnSave": false,
+  "compileOnSave": true,
   "include": ["../node_modules/angular-bootstrap-md/**/*.ts",  "src/**/*.ts"], // add this line
   "compilerOptions": {
     "baseUrl": "./",

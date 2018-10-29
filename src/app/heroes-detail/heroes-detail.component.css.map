@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAAA,UAAU;EACR,MAAM,EAAE,OAAO;;AAEjB,KAAM;EACJ,UAAU,EAAE,IAAI;EAEd,wBAAK;IACH,qBAAqB,EAAE,GAAG;IAC1B,kBAAkB,EAAE,GAAG;IACvB,aAAa,EAAE,GAAG;IAClB,qCAAc;MACZ,UAAU,EAAE,kEAA0D;EAKtE,qDAAoB;IAClB,UAAU,EAAE,IAAI;IAChB,WAAW,EAAE,EAAE;IACf,YAAY,EAAE,EAAE;EAKhB,6DAAoB;IAClB,UAAU,EAAE,KAAK;IACjB,OAAO,EAAE,EAAE;IACX,aAAa,EAAE,MAAM;IACrB,UAAU,EAAE,kEAAgE;;AAOxF,UAAU;EACR,MAAM,EAAE,KAAK",
+"sources": ["heroes-detail.component.scss"],
 "names": [],
 "file": "heroes-detail.component.css"
 }
