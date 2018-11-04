@@ -1,5 +1,7 @@
-.container {
-  margin: 5% auto; }
+.container-fluid {
+  margin: 5% auto;
+  padding-right: 50px;
+  padding-left: 50px; }
 
 .card {
   box-shadow: none; }

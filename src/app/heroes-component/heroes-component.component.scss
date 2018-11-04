@@ -1,37 +1,59 @@
-.dashboard-content-items{
-  margin:0 auto;
+.dashboard-content-items {
+  margin: 0 auto;
 }
+
 .avatar {
   img {
-    width: 50px;
+    width: 60px;
     height: auto;
   }
-  #heroes-name{
-    font-size: 14px;
-    left: 75px;
-    top: 18px;
+  #heroes-name {
+    font-size: 18px;
+    left: 85px;
+    top: 15px;
   }
-  #real-name{
-    font-size: 12px;
-    left: 75px;
-    top: 35px;
+  #real-name {
+    font-size: 18px;
+    left: 85px;
+    top: 40px;
+    border-bottom: 2px solid #F44436;
+    width: 80%;
   }
 }
-.card-header{
-  .lover{
-    line-height:50px;
-    span{
+.card{
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  margin-bottom: 50px;
+}
+.card-header {
+  background: #ffffff;
+  .lover {
+    line-height: 50px;
+    span {
       margin-left: 7px;
     }
   }
 }
-.card-body{
+
+.card-body {
   padding: 0;
-  .heroes-images{
-    img{
+  border-top: 4px solid #F44436;
+  border-bottom: 4px solid #F44436;
+  .heroes-images {
+    img {
       margin: 0;
       min-width: 100%;
     }
   }
 }
 
+.card-footer {
+  background: #ffffff;
+  span#love-number {
+    padding-left: 10px;
+  }
+  .slogan {
+    padding-left: 10px;
+  }
+}

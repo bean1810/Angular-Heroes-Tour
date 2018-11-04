@@ -1,23 +1,41 @@
 <div class="dashboard-content-items col-md-10" *ngIf="heroes.length">
-  <mdb-card *ngFor="let hero of heroes" routerLink="/detail/{{hero.id}}">
-    <mdb-card-header>
-      <div class="avatar mx-auto float-left">
-        <span id="heroes-name" class="absolute {{hero.color}}">{{hero.nameHeroes}}</span>
-        <img src="../../assets/images/avatars/{{hero.avatar}}" alt="" class="rounded-circle img-fluid">
-        <span id="real-name" class="absolute">{{hero.realName}}</span>
-      </div>
-      <div class="float-right lover">
-        <mdb-icon icon="heart" style="color: red"></mdb-icon>
-        <span id="love-number">{{hero.lover}}</span>
-      </div>
-    </mdb-card-header>
-    <mdb-card-body>
-      <div id="js-iron-man-heroes" class="heroes-images view overlay waves-light zoom" mdbWavesEffect>
-        <img src="{{hero.imagesDashboard}}" alt="{{hero.nameHeroes}}" class="img-fluid">
-        <a>
-          <div class="mask rgba-white-slight waves-effect waves-light"></div>
-        </a>
-      </div>
-    </mdb-card-body>
-  </mdb-card>
+    <!-- Card -->
+    <div class="card" *ngFor="let hero of heroes" routerLink="/detail/{{hero.id}}">
+        <div class="card-header">
+            <div class="avatar mx-auto float-left">
+                <div id="heroes-name" class="absolute {{hero.color}}">
+                    <span>{{hero.nameHeroes}}</span>
+                </div>
+
+                <img src="../../assets/images/avatars/{{hero.avatar}}" alt="" class="rounded-circle img-fluid">
+
+                <div id="real-name" class="absolute">
+                    <span>{{hero.realName}}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card content -->
+        <div class="card-body">
+            <div id="js-iron-man-heroes" class="heroes-images view overlay waves-light zoom" mdbWavesEffect>
+                <img src="{{hero.imagesDashboard}}" alt="{{hero.nameHeroes}}" class="img-fluid">
+                <a>
+                    <div class="mask rgba-white-slight waves-effect waves-light"></div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Card footer -->
+        <div class="card-footer">
+            <div class="lover">
+                <mdb-icon icon="heart" style="color: red"></mdb-icon>
+                <span id="love-number">{{hero.lover}}</span>
+            </div>
+            <div class="slogan">
+                <span style="color: #a3a3a3;">{{hero.realName}}</span><span> {{hero.slogan}} - </span><span
+                    style="color: #3366ff;">#{{hero.hashtag}}</span>
+            </div>
+        </div>
+    </div>
+    <!-- Card -->
 </div>

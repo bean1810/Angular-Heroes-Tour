@@ -12,4 +12,6 @@ export class HeroInterFaces {
     imagesDetail?: any;
     Dob?: any;
     Characteristics?: Array<any>;
+    slogan?: any;
+    hashtag?: any;
 }
