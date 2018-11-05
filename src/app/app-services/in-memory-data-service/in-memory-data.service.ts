@@ -15,7 +15,7 @@ export class InMemoryDataService implements InMemoryDbService {
                 color: 'red-text',
                 realName: 'Tony Stark',
                 lover: 19900,
-                imagesDashboard: '../../assets/images/heroes/Ironman/ironMan_wallpaper.jpg',
+                imagesDashboard: '../../assets/images/heroes/Ironman/iron-man-dashboard.jpeg',
                 rank: 4,
                 slogan: 'Genius, Billionaire, Playboy, Philanthropist.',
                 hashtag: 'CREATION'
