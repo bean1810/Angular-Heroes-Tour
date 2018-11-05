@@ -23,7 +23,7 @@ export class InMemoryDataService implements InMemoryDbService {
             {
                 id: 2,
                 avatar: 'doctor-strange.png',
-                nameHeroes: 'Dr.Strange',
+                nameHeroes: 'Doctor Strange',
                 color: 'orange-text',
                 realName: 'Stephen Vincent Strange',
                 lover: 229900,
@@ -41,7 +41,7 @@ export class InMemoryDataService implements InMemoryDbService {
                 lover: 239402,
                 imagesDashboard: '../../assets/images/heroes/Hulk/incredible-hulk-wallpaper.jpg',
                 rank: 3,
-                slogan: 'You wouldn’t like me when I’m angry.',
+                slogan: 'I just get so angry all the time! Hulk always... always angry',
                 hashtag: 'SMASH'
             },
             {
@@ -49,7 +49,7 @@ export class InMemoryDataService implements InMemoryDbService {
                 avatar: 'thanos-avatar.png',
                 nameHeroes: 'The Mad Titan',
                 color: 'purple-text',
-                realName: 'Nobody know',
+                realName: 'No dual identity',
                 lover: 989898989,
                 imagesDashboard: '../../assets/images/heroes/thanos/thanos-wallpaper.jpg',
                 rank: 1,
@@ -119,8 +119,8 @@ export class InMemoryDataService implements InMemoryDbService {
             {
                 id: 1,
                 realName: 'Tony Stark',
-                nameHeroes: 'Iron Man',
-                imagesDetail: '../../assets/images/heroes/Ironman/ironMan_wallpaper.jpg',
+                nameHeroes: 'Shellhead, Golden Avenger',
+                imagesDetail: '../../assets/images/heroes/Ironman/iron-man-detail.jpg',
                 summary: 'A wealthy American business magnate, playboy, and ingenious scientist, Anthony Edward "Tony" Stark suffers a ' +
                     'severe chest injury during a kidnapping. When his captors attempt to force him to build a weapon of mass destruct' +
                     'ion, he instead creates a powered suit of armor to save his life and escape captivity. Later, Stark develops his ' +
@@ -129,11 +129,81 @@ export class InMemoryDataService implements InMemoryDbService {
                     'Stark eventually declared that he was, in fact, Iron Man in a public announcement.',
                 Dob: 'March 1963',
                 Characteristics: [
-                    {color: 'danger', characteristics: 'Genius'},
-                    {color: 'info', characteristics: 'Complacent'},
-                    {color: 'secondary', characteristics: 'Wealthy'},
-                    {color: 'warning', characteristics: 'Handsome'},
-                ],
+                    {color: 'danger', characteristics: 'Flight'},
+                    {color: 'info', characteristics: 'Artificial Intelligence'},
+                    {color: 'secondary', characteristics: 'Armored Suit'},
+                    {color: 'warning', characteristics: 'Super Strength + Durability'},
+                ]
+            },
+            {
+                id: 2,
+                realName: 'Stephen Vincent Strange',
+                nameHeroes: 'Doctor Strange: The Sorcerer Supreme',
+                imagesDetail: '../../assets/images/heroes/doctor-Strange/doctor-strange-detail.jpg',
+                summary: 'Stephen Strange was a surgeon whose career was cut short when his steady hands were damaged in an ' +
+                    'accident. Seeking a cure to fix his hands that conventional medicine could not provide, Strange ' +
+                    'embarked on a quest to find the Ancient One, which saw him become Master of the Mystic Arts! Sworn ' +
+                    'to protect this world from other-worldly threats, Strange remains vigilant as Earth\'s mystical protector.',
+                Dob: 'July 1963',
+                Characteristics: [
+                    {color: 'danger', characteristics: 'Magic'},
+                    {color: 'info', characteristics: 'Utilization of Eye of Agamotto'},
+                    {color: 'secondary', characteristics: 'Cloak of Levitation'},
+                    {color: 'warning', characteristics: 'Astral Projection'}
+                ]
+            },
+            {
+                id: 3,
+                realName: 'David Bruce Banner',
+                nameHeroes: 'Robert Bruce Banner, Breaker of Worlds',
+                imagesDetail: '../../assets/images/heroes/Hulk/hulk-detail.jpg',
+                summary: 'The child of an abusive father, Bruce Banner grew up shy and introverted, yet a scientific genius. ' +
+                    'As a young man, thanks to his standout work in the field of nuclear physics, he attracted the attention of the U.S. ' +
+                    'Army who wanted to adapt his theories for weaponry. Banner resisted such notions, but failed attempts at landing ' +
+                    'steady work convinced him to accept a position at a federal nuclear research facility at a missile base in the ' +
+                    'New Mexico desert',
+                Dob: 'May 1962',
+                Characteristics: [
+                    {color: 'danger', characteristics: 'Superhuman Strength'},
+                    {color: 'info', characteristics: 'Long Distance Jumping'},
+                    {color: 'secondary', characteristics: 'Hulk Smash'},
+                    {color: 'warning', characteristics: 'Durability and Regeneration'}
+                ]
+            },
+            {
+                id: 4,
+                realName: 'No dual identity',
+                nameHeroes: 'The Mad Titan',
+                imagesDetail: '../../assets/images/heroes/thanos/thanos-detail.jpg',
+                summary: 'A native of the planet Titan, Thanos saw the danger his people were in from overpopulation and suggested' +
+                    ' a severe solution—the elimination of half the population, at random and without prejudice, in order to make life' +
+                    ' better for the planet as a whole. He was shunned as a madman, but his planet did indeed eventually die, lacking ' +
+                    'the resources needed to keep up with the demands.',
+                Dob: 'February 1973',
+                Characteristics: [
+                    {color: 'danger', characteristics: 'Enhanced Strength'},
+                    {color: 'info', characteristics: 'Master Tactician'},
+                    {color: 'secondary', characteristics: 'Infinity Gauntlet'},
+                    {color: 'warning', characteristics: 'Immortality'}
+                ]
+            },
+            {
+                id: 5,
+                realName: 'Steve Rogers',
+                nameHeroes: 'Captain America',
+                imagesDetail: '../../assets/images/heroes/captain-america/captain-america-detail.jpg',
+                summary: 'Envious of his friend Bucky Barnes’ military enlistment, and undeterred by his own multiple rejections ' +
+                    'by the U.S. Army, physical weakling Steve Rogers made one more attempt to join the march of men to fight for ' +
+                    'their country in the dark days of World War II. Rogers’ valiant wish to fight bullies wherever they were grabbed ' +
+                    'the attention of scientist Dr. Abraham Erskine, and he handpicked the idealistic young man for the Army’s ' +
+                    'Super-Soldier program under his supervision.',
+                Dob: 'March 1941',
+                Characteristics: [
+                    {color: 'danger', characteristics: 'Speed & Stamina'},
+                    {color: 'info', characteristics: 'Skilled Fighter'},
+                    {color: 'secondary', characteristics: 'Acrobat'},
+                    {color: 'warning', characteristics: 'Vibranium Shield'}
+                ]
             }
         ];
         return {heroes, heroesList, heroesDetail};
