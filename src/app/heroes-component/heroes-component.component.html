@@ -1,4 +1,4 @@
-<div class="dashboard-content-items col-md-10" *ngIf="heroes.length">
+<div class="dashboard-content-items col-md-10" *ngIf="!skeleton;else skeletonScreen">
     <!-- Card -->
     <div class="card" *ngFor="let hero of heroes" routerLink="/detail/{{hero.id}}">
         <div class="card-header">
@@ -39,3 +39,36 @@
     </div>
     <!-- Card -->
 </div>
+<ng-template #skeletonScreen>
+    <div class="dashboard-content-items col-md-10 skeleton">
+        <!-- Card -->
+        <div class="card" *ngFor="let fakeData of skeletonData">
+            <div class="card-header">
+                <div class="avatar mx-auto float-left">
+                    <div id="heroes-name-skeleton" class="absolute"></div>
+
+                    <div id="real-name-skeleton" class="absolute"></div>
+                </div>
+            </div>
+
+            <!-- Card content -->
+            <div class="card-body">
+                <div id="js-iron-man-heroes-skeleton" class="heroes-images view overlay waves-light zoom" mdbWavesEffect></div>
+            </div>
+
+            <!-- Card footer -->
+            <div class="card-footer">
+                <div class="lover">
+
+                </div>
+                <div class="slogan">
+
+                </div>
+            </div>
+        </div>
+        <!-- Card -->
+    </div>
+</ng-template>
+
+
+

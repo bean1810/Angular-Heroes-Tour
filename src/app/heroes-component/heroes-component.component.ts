@@ -9,6 +9,8 @@ import {HeroService} from '../app-services/hero-services/hero.service';
 })
 export class HeroesComponentComponent implements OnInit {
     heroes: HeroInterFaces[];
+    skeleton = true;
+    skeletonData = new Array(5);
 
     constructor(private HeroServices: HeroService) {
     }
@@ -19,7 +21,14 @@ export class HeroesComponentComponent implements OnInit {
 
     // function to retrieve the heroes from the service.
     getHeroes(): void {
-        this.HeroServices.getHeroes().subscribe(heroes => this.heroes = heroes);
+        setTimeout(() => {
+            this.HeroServices.getHeroes().subscribe(heroes => {
+                this.heroes = heroes.sort((a, b) => {
+                    return a.rank - b.rank;
+                });
+                this.skeleton = false;
+            });
+        }, 1000);
     }
 
 }
