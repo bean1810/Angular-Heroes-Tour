@@ -5,4 +5,11 @@
 .relative {
   position: relative; }
 
+.ng-progress-bar {
+  position: absolute !important;
+  top: 70px !important; }
+
+.ng-bar-placeholder {
+  height: 40px !important; }
+
 /*# sourceMappingURL=styles.css.map */

@@ -1,7 +1,6 @@
+<ng-progress></ng-progress>
 <div class="container heroesList-container">
     <div class="row">
-        <div class="col-12 col-sm-12 col-md-4 card-items" *ngFor="let heroesList of heroProperties">
-            <app-card-item [heroProperties] = "heroesList"></app-card-item>
-        </div>
+        <app-card-item [skeleton]="skeleton" [skeletonData]="skeletonData" [heroesData] = "heroProperties"></app-card-item>
     </div>
 </div>

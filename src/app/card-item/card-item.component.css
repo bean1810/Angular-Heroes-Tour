@@ -3,4 +3,36 @@
   max-height: 250px;
   width: 100%; }
 
+.card-items {
+  margin-bottom: 50px; }
+
+/*Skeleton Screen Animation*/
+.skeleton .skeleton-image {
+  background-image: linear-gradient(90deg, #F4F4F4 0px, rgba(229, 229, 229, 0.8) 40px, #F4F4F4 80px);
+  animation: skeleton-screen-body 2.5s infinite ease-in-out; }
+.skeleton .card-title-skeleton {
+  background-image: linear-gradient(90deg, #F4F4F4 0px, rgba(229, 229, 229, 0.8) 40px, #F4F4F4 80px);
+  width: 150px;
+  height: 15px;
+  border-radius: 7px;
+  animation: skeleton-screen-text 2.5s infinite ease-in-out; }
+.skeleton .card-text-skeleton {
+  background-image: linear-gradient(90deg, #F4F4F4 0px, rgba(229, 229, 229, 0.8) 40px, #F4F4F4 80px);
+  width: 150px;
+  height: 15px;
+  border-radius: 7px;
+  margin-bottom: 10px;
+  animation: skeleton-screen-text 2.5s infinite ease-in-out; }
+
+@keyframes skeleton-screen-body {
+  0% {
+    background-position: -350px; }
+  100% {
+    background-position: 350px; } }
+@keyframes skeleton-screen-text {
+  0% {
+    background-position: -150px; }
+  100% {
+    background-position: 150px; } }
+
 /*# sourceMappingURL=card-item.component.css.map */
