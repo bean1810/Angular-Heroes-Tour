@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, AfterViewInit, AfterContentInit, ViewChild, ElementRef} from '@angular/core';
+import {Component, OnInit, Input, Output, AfterViewInit, AfterContentInit, ViewChild, ElementRef, EventEmitter} from '@angular/core';
 import {HeroInterFaces} from '../heroes-component/hero-interfaces';
 import * as $ from 'jquery';
 
@@ -12,6 +12,8 @@ export class CardItemComponent implements OnInit, AfterViewInit, AfterContentIni
     @Input() skeleton;
     @Input() skeletonData;
     @ViewChild('wrapper') wrapper: ElementRef;
+    @Output() selectHeroToDelete = new EventEmitter<HeroInterFaces>();
+
     constructor() {
     }
 
@@ -22,5 +24,9 @@ export class CardItemComponent implements OnInit, AfterViewInit, AfterContentIni
     }
 
     ngAfterContentInit() {
+    }
+
+    selectHeroToDeleteFunc(hero: HeroInterFaces) {
+        this.selectHeroToDelete.emit(hero);
     }
 }

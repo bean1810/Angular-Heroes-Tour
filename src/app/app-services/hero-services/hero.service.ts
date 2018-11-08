@@ -1,19 +1,23 @@
 import {Injectable} from '@angular/core';
 import {HeroInterFaces} from '../../heroes-component/hero-interfaces';
 import {Observable, of} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {catchError, tap} from 'rxjs/internal/operators';
 import {MessagesService} from '../messages-services/messages.service';
+
+const httpOptions = {
+    headers: new HttpHeaders({'Content-Type': 'application/json'})
+};
 
 @Injectable({
     providedIn: 'root'
 })
 export class HeroService {
+    /*Url to web api*/
     private heroesUrl = 'api/heroes';
     private heroesListUrl = 'api/heroesList';
     private heroesDetailUrl = 'api/heroesDetail';
 
-    /*Url to web api*/
     constructor(private http: HttpClient, private messageService: MessagesService) {
     }
 
@@ -36,6 +40,17 @@ export class HeroService {
         return this.http.get<HeroInterFaces[]>(this.heroesListUrl).pipe(
             tap(heroes => this.log(`fetched list heroes : ${heroes}`)),
             catchError(this.handleError('getListHeroes', []))
+        );
+    }
+
+    /*delete hero service*/
+    deleteHero(hero: HeroInterFaces | number): Observable<HeroInterFaces> {
+        const id = typeof hero === 'number' ? hero : hero.id;
+        const url = `${this.heroesUrl}`;
+
+        return this.http.delete<HeroInterFaces>(url, httpOptions).pipe(
+            tap(heroes => this.log(`delete Hero  : ${heroes.nameHeroes}`)),
+            catchError(this.handleError<HeroInterFaces>('deleteHero'))
         );
     }
 

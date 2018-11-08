@@ -5,7 +5,7 @@ import {HeroesListComponentComponent} from '../heroes-list-component/heroes-list
 import {HeroesDetailComponent} from '../heroes-detail/heroes-detail.component';
 
 const routes: Routes = [
-    {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+    {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
     {path: 'dashboard', component: DashboardComponent},
     {path: 'heroesList', component: HeroesListComponentComponent},
     {path: 'detail/:id', component : HeroesDetailComponent}

@@ -3,7 +3,7 @@
     <div class="col-12 col-sm-12 col-md-4 card-items" *ngFor="let heroProperties of heroesData">
       <!-- Card -->
       <div class="card">
-        <div class="view rgba-white-slight waves-light skeleton-image" mdbWavesEffect>
+        <div class="view rgba-white-slight waves-light skeleton-image" routerLink="/detail/{{heroProperties.id}}" mdbWavesEffect>
           <!-- Card img -->
           <img src="{{heroProperties.imagesList}}" alt="" class="img-responsive img-fluid img--height">
           <a> <div class="mask"></div> </a>
@@ -15,8 +15,8 @@
           <!--Text-->
           <mdb-card-text>{{heroProperties.summary}}</mdb-card-text>
 
-          <a href="#" class="btn btn-primary waves-light" mdbWavesEffect>Edit</a>
-          <a href="#" class="btn btn-danger waves-light" mdbWavesEffect>Delete</a>
+          <button class="btn btn-primary waves-light" mdbWavesEffect>Edit</button>
+          <button class="btn btn-danger waves-light" mdbWavesEffect (click)="selectHeroToDeleteFunc(heroProperties)">Delete</button>
         </div>
       </div>
     </div>
