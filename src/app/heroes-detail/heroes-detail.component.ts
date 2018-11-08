@@ -3,6 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
 import {HeroService} from '../app-services/hero-services/hero.service';
 import {HeroInterFaces} from '../heroes-component/hero-interfaces';
+import {NgProgress, NgProgressRef} from '@ngx-progressbar/core';
 
 @Component({
     selector: 'app-heroes-detail',
@@ -11,18 +12,27 @@ import {HeroInterFaces} from '../heroes-component/hero-interfaces';
 })
 export class HeroesDetailComponent implements OnInit {
     hero: HeroInterFaces;
+    progressRef: NgProgressRef;
+    skeleton = false;
 
-    constructor(private route: ActivatedRoute, private location: Location, private HeroServices: HeroService) {
+    constructor(private route: ActivatedRoute, private location: Location, private HeroServices: HeroService
+                , public ngProgress: NgProgress) {
     }
 
     ngOnInit() {
+        this.progressRef = this.ngProgress.ref();
         this.getHeroesDetail();
     }
 
     getHeroesDetail(): void {
+        this.progressRef.start();
         const id = +this.route.snapshot.paramMap.get('id');
         this.HeroServices.getHeroDetail(id).subscribe(
-            heroDetail => this.hero = heroDetail
+            heroDetail => {
+                this.hero = heroDetail;
+                this.progressRef.complete();
+                this.skeleton = true;
+            }
         );
     }
 }

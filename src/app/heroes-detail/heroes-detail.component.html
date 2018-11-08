@@ -1,4 +1,5 @@
-<div class="container-fluid">
+<ng-progress></ng-progress>
+<div class="container-fluid" *ngIf="skeleton;else skeletonScreen">
     <div class="col-md-12">
         <div class="card card-cascade wider reverse">
             <div class="view view-cascade overlay">
@@ -21,3 +22,26 @@
         </div>
     </div>
 </div>
+
+<ng-template #skeletonScreen>
+    <div class="container-fluid">
+        <div class="col-md-12">
+            <div class="card card-cascade wider reverse">
+                <div class="view view-cascade overlay skeleton-image">
+                    <img src="" alt="" class="img-fluid">
+                    <a>
+                        <div class="mask rgba-white-slight waves-effect waves-light"></div>
+                    </a>
+                </div>
+                <div class="card-body card-body-cascade text-center skeleton-body">
+                    <div class="card-title-skeleton"></div>
+                    <div class="Characteristics-skeleton">
+                    </div>
+                </div>
+
+            </div>
+            <div class="introduce-skeleton">
+            </div>
+        </div>
+    </div>
+</ng-template>
