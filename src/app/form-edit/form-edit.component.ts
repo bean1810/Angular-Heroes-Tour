@@ -4,7 +4,6 @@ import {HeroInterFaces} from '../heroes-component/hero-interfaces';
 import {HeroService} from '../app-services/hero-services/hero.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {NgProgress, NgProgressRef} from '@ngx-progressbar/core';
-import {Location} from '@angular/common';
 
 @Component({
     selector: 'app-form-edit',
@@ -17,8 +16,7 @@ export class FormEditComponent implements OnInit {
     submitted = false;
     progressRef: NgProgressRef;
     constructor(private heroServices: HeroService, private route: ActivatedRoute
-        , private formBuilder: FormBuilder, private router: Router, public ngProgress: NgProgress
-        , private location: Location) {
+        , private formBuilder: FormBuilder, private router: Router, public ngProgress: NgProgress) {
     }
 
     ngOnInit() {
@@ -59,8 +57,7 @@ export class FormEditComponent implements OnInit {
         this.heroServices.updateHero(this.heroToEdit).subscribe(
             () => {
                 this.progressRef.complete();
-                this.location.back();
-                // this.navigateToHeroList();
+                this.navigateToHeroList();
             }
         );
     }
