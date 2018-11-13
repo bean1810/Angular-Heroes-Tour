@@ -43,14 +43,30 @@ export class HeroService {
         );
     }
 
+    getHeroListById(id: number): Observable<HeroInterFaces> {
+        const url = `${this.heroesListUrl}/${id}`;
+        return this.http.get<HeroInterFaces>(url).pipe(
+            tap(hero => this.log(`fetched hero : ${hero.nameHeroes}`)),
+            catchError(this.handleError<HeroInterFaces>('getHeroListById'))
+        );
+    }
+
     /*delete hero service*/
     deleteHero(hero: HeroInterFaces | number): Observable<HeroInterFaces> {
         const id = typeof hero === 'number' ? hero : hero.id;
-        const url = `${this.heroesUrl}`;
+        const url = `${this.heroesUrl}/${id}`;
 
         return this.http.delete<HeroInterFaces>(url, httpOptions).pipe(
             tap(heroes => this.log(`delete Hero  : ${heroes.nameHeroes}`)),
             catchError(this.handleError<HeroInterFaces>('deleteHero'))
+        );
+    }
+
+    /*Update Hero Service*/
+    updateHero(hero: HeroInterFaces): Observable<any> {
+        return this.http.put(this.heroesListUrl, hero, httpOptions).pipe(
+            tap(() => this.log(`updated hero : ${hero.nameHeroes}` )),
+            catchError(this.handleError('updateHeroService'))
         );
     }
 

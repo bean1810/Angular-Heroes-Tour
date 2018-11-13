@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {HeroService} from '../app-services/hero-services/hero.service';
 import {HeroInterFaces} from '../heroes-component/hero-interfaces';
 import {NgProgress, NgProgressRef} from '@ngx-progressbar/core';
-import {CardItemComponent} from '../card-item/card-item.component';
 
 @Component({
     selector: 'app-heroes-list-component',

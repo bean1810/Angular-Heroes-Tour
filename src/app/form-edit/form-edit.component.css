@@ -1,0 +1,23 @@
+.edit-container {
+  margin: 50px auto; }
+  .edit-container .card {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    margin-bottom: 50px; }
+    .edit-container .card .card-header {
+      height: auto;
+      background: #ffffff;
+      margin: 0 auto; }
+      .edit-container .card .card-header .avatar {
+        overflow: hidden; }
+        .edit-container .card .card-header .avatar img {
+          width: 80px;
+          height: auto; }
+    .edit-container .card .card-body .is-invalid {
+      box-shadow: 0 1px 0 0 #F44436;
+      border-bottom: 1px solid #F44436; }
+    .edit-container .card .card-body .invalid-feedback {
+      margin-left: 2.5rem; }
+
+/*# sourceMappingURL=form-edit.component.css.map */

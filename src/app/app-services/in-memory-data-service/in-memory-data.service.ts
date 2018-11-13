@@ -73,6 +73,7 @@ export class InMemoryDataService implements InMemoryDbService {
         const heroesList = [
             {
                 id: 1,
+                avatar: 'tony-stark.png',
                 realName: 'Tony Stark',
                 imagesList: '../../assets/images/heroes/Ironman/Tony-stark-i-am-iron-man.jpg',
                 summary: 'Iron Man is a fictional superhero appearing in ' +
@@ -81,6 +82,7 @@ export class InMemoryDataService implements InMemoryDbService {
             },
             {
                 id: 2,
+                avatar: 'doctor-strange.png',
                 realName: 'Stephen Vincent Strange',
                 imagesList: '../../assets/images/heroes/doctor-Strange/doctor-strange.jpg',
                 summary: 'Doctor Stephen Vincent Strange is ' +
@@ -91,6 +93,7 @@ export class InMemoryDataService implements InMemoryDbService {
             },
             {
                 id: 3,
+                avatar: 'hulk-avatar.png',
                 realName: 'David Bruce Banner',
                 imagesList: '../../assets/images/heroes/Hulk/hulk.jpg',
                 summary: 'David Bruce Banner, M.D., Ph.D., is a' +
@@ -100,6 +103,7 @@ export class InMemoryDataService implements InMemoryDbService {
             },
             {
                 id: 4,
+                avatar: 'thanos-avatar.png',
                 realName: 'The Mad Titan',
                 imagesList: '../../assets/images/heroes/thanos/Josh-Brolin-Cannes.jpg',
                 summary: 'The Mad Titan called Thanos is known across all reality as one of the most powerful beings in ' +
@@ -108,6 +112,7 @@ export class InMemoryDataService implements InMemoryDbService {
             },
             {
                 id: 5,
+                avatar : 'captain-america.png',
                 realName: 'Steve Rogers',
                 imagesList: '../../assets/images/heroes/captain-america/captain-america-list.jpg',
                 summary: 'Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a ' +

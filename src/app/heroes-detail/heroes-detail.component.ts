@@ -16,7 +16,7 @@ export class HeroesDetailComponent implements OnInit {
     skeleton = false;
 
     constructor(private route: ActivatedRoute, private location: Location, private HeroServices: HeroService
-                , public ngProgress: NgProgress) {
+        , public ngProgress: NgProgress) {
     }
 
     ngOnInit() {

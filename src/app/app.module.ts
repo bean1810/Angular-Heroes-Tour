@@ -1,7 +1,8 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
-import { NgProgressModule } from '@ngx-progressbar/core';
+import {NgProgressModule} from '@ngx-progressbar/core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AppComponent} from './app.component';
 import {HeaderComponentComponent} from './header-component/header-component.component';
 import {FooterComponentComponent} from './footer-component/footer-component.component';
@@ -15,6 +16,7 @@ import {HeroesDetailComponent} from './heroes-detail/heroes-detail.component';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {InMemoryDataService} from './app-services/in-memory-data-service/in-memory-data.service';
+import {FormEditComponent} from './form-edit/form-edit.component';
 
 @NgModule({
     declarations: [
@@ -26,9 +28,12 @@ import {InMemoryDataService} from './app-services/in-memory-data-service/in-memo
         HeroesListComponentComponent,
         CardItemComponent,
         HeroesDetailComponent,
+        FormEditComponent,
     ],
     imports: [
         BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
         MDBBootstrapModule.forRoot(),
         NgProgressModule.forRoot({
             spinner: false,

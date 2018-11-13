@@ -1,0 +1,82 @@
+<ng-progress></ng-progress>
+<div class="container edit-container" *ngIf="heroToEdit">
+    <!-- Card -->
+    <div class="card">
+        <div class="card-header">
+            <div class="avatar mx-auto">
+                <img src="../../assets/images/avatars/{{heroToEdit.avatar}}" alt="" class="rounded-circle img-fluid">
+            </div>
+        </div>
+
+        <!-- Card content -->
+        <div class="card-body">
+            <form [formGroup]="validatingForm" (ngSubmit)="onSubmit()">
+                <div class="md-form">
+                    <i class="fa fa-user-secret prefix"></i>
+                    <input minLength="5" maxLength="25" type="text" class="form-control"
+                           id="form1" name="nameHero" formControlName="nameHero"
+                           [ngClass]="{ 'is-invalid': submitted && f.nameHero.errors }" mdbInputDirective
+                           [mdbValidate]="false"/>
+                    <label for="form1">Type your hero name</label>
+                    <div *ngIf="submitted && f.nameHero.errors" class="invalid-feedback">
+                        <div *ngIf="f.nameHero.errors.required">Name Hero is Required</div>
+                    </div>
+                </div>
+                <div class="md-form">
+                    <i class="fa fa-user prefix"></i>
+                    <input minLength="5" maxLength="25" type="text" class="form-control"
+                           id="form2.1" name="realName" formControlName="realName"
+                           [ngClass]="{'is-invalid' : submitted && f.realName.errors}" mdbInputDirective
+                           [mdbValidate]="false"/>
+                    <label for="form2.1">Type your hero real name</label>
+                    <div *ngIf="submitted && f.realName.errors" class="invalid-feedback">
+                        <div *ngIf="f.realName.errors.required">Real Name of Hero is Required</div>
+                    </div>
+
+                </div>
+                <div class="md-form">
+                    <i class="fa fa-quote-left prefix"></i>
+                    <input minLength="5" maxLength="255" type="text" class="form-control"
+                           id="form3" name="slogan" formControlName="slogan"
+                           [ngClass]="{'is-invalid' : submitted && f.slogan.errors}" mdbInputDirective
+                           [mdbValidate]="false"/>
+                    <label for="form3">Type your slogan</label>
+                    <div *ngIf="submitted && f.slogan.errors" class="invalid-feedback">
+                        <div *ngIf="f.slogan.errors.required">Slogan is Required</div>
+                    </div>
+                </div>
+                <div class="md-form">
+                    <i class="fa fa-hashtag prefix"></i>
+                    <input minLength="5" maxLength="25" type="email" class="form-control"
+                           id="form4" name="hashtag" formControlName="hashtag"
+                           [ngClass]="{'is-invalid' : submitted && f.hashtag.errors}" mdbInputDirective
+                           [mdbValidate]="false"/>
+                    <label for="form4">Type your hashtag</label>
+                    <div *ngIf="submitted && f.hashtag.errors" class="invalid-feedback">
+                        <div *ngIf="f.hashtag.errors.required">Hashtag is Required</div>
+                    </div>
+                </div>
+                <div class="md-form">
+                    <i class="fa fa-heart prefix"></i>
+                    <input minLength="10" maxLength="25" type="number" class="form-control"
+                           id="form5" formControlName="lover" name="lover"
+                           [ngClass]="{'is-invalid' : submitted && f.lover.errors}" mdbInputDirective
+                           [mdbValidate]="false"/>
+                    <label for="form5">Type your love number</label>
+                    <div *ngIf="submitted && f.lover.errors" class="invalid-feedback">
+                        <div *ngIf="f.lover.errors.required">Number of lover is Required</div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Card footer -->
+        <div class="card-footer">
+            <button mdbBtn type="button" color="primary" class="waves-light" (click)="onSubmit()" mdbWavesEffect>Save</button>
+            <button mdbBtn type="button" color="danger" class="waves-light" mdbWavesEffect (click)="navigateToHeroList()">Cancel</button>
+        </div>
+    </div>
+    <!-- Card -->
+</div>
+
+

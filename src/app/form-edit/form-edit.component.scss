@@ -1,0 +1,31 @@
+.edit-container{
+  margin: 50px auto;
+  .card {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    margin-bottom: 50px;
+    .card-header {
+      height: auto;
+      background: #ffffff;
+      margin: 0 auto;
+      .avatar {
+        overflow: hidden;
+        img {
+          width: 80px;
+          height: auto;
+        }
+      }
+    }
+    .card-body{
+      .is-invalid{
+        box-shadow: 0 1px 0 0 #F44436;
+        border-bottom: 1px solid #F44436;
+      }
+      .invalid-feedback{
+        margin-left: 2.5rem;
+      }
+    }
+  }
+}
+
