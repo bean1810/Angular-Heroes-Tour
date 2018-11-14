@@ -32,17 +32,19 @@
   background-image: linear-gradient(90deg, #F4F4F4 0px, rgba(229, 229, 229, 0.8) 40px, #F4F4F4 80px) !important;
   animation: skeleton-screen-image 2.5s infinite ease-in-out; }
 
-.skeleton-body {
-  width: 1205px;
-  height: 143px;
+.skeleton-body .card-title-skeleton, .skeleton-body .Characteristics-skeleton {
+  width: 600px;
+  height: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
   background-image: linear-gradient(90deg, #F4F4F4 0px, rgba(229, 229, 229, 0.8) 40px, #F4F4F4 80px) !important;
   animation: skeleton-screen-body 2.5s infinite ease-in-out; }
 
 .introduce-skeleton {
   width: 1000px;
-  height: 100px;
+  height: 15px;
   margin: 50px auto 0 auto;
-  border-radius: 30px;
+  border-radius: 10px;
   background-image: linear-gradient(90deg, #F4F4F4 0px, rgba(229, 229, 229, 0.8) 40px, #F4F4F4 80px) !important;
   animation: skeleton-screen-introduce-text 2.5s infinite ease-in-out; }
 
@@ -53,9 +55,9 @@
     background-position: 1310px; } }
 @keyframes skeleton-screen-body {
   0% {
-    background-position: -1205px; }
+    background-position: -600px; }
   100% {
-    background-position: 1205px; } }
+    background-position: 600px; } }
 @keyframes skeleton-screen-introduce-text {
   0% {
     background-position: -1000px; }

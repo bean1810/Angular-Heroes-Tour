@@ -59,17 +59,22 @@ $animation-duration: 2.0s;
 }
 
 .skeleton-body {
-  width: 1205px;
-  height: 143px;
-  @include background-gradient;
-  animation: skeleton-screen-body 2.5s infinite ease-in-out;
+  .card-title-skeleton, .Characteristics-skeleton{
+    width: 600px;
+    height: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    @include background-gradient;
+    animation: skeleton-screen-body 2.5s infinite ease-in-out;
+  }
+
 }
 
 .introduce-skeleton {
   width: 1000px;
-  height: 100px;
+  height: 15px;
   margin: 50px auto 0 auto;
-  border-radius: 30px;
+  border-radius: 10px;
   @include background-gradient;
   animation: skeleton-screen-introduce-text 2.5s infinite ease-in-out;
 }
@@ -85,10 +90,10 @@ $animation-duration: 2.0s;
 
 @keyframes skeleton-screen-body {
   0% {
-    background-position: -1205px;
+    background-position: -600px;
   }
   100% {
-    background-position: 1205px;
+    background-position: 600px;
   }
 }
 
