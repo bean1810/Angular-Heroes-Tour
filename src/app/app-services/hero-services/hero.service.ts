@@ -14,61 +14,73 @@ const httpOptions = {
 })
 export class HeroService {
     /*Url to web api*/
-    private heroesUrl = 'api/heroes';
-    private heroesListUrl = 'api/heroesList';
-    private heroesDetailUrl = 'api/heroesDetail';
+    private heroPrefixUrl = 'http://localhost:3000/api/heroesMarvel';
+    private heroGeneralInfo = 'generalInfo';
+    private heroDashBoard = 'getAllHeroesInDashboard';
+    private heroList = 'getAllHeroesList';
+    private heroDetail = 'getHeroDetail';
 
     constructor(private http: HttpClient, private messageService: MessagesService) {
     }
 
-    getHeroes(): Observable<HeroInterFaces[]> {
-        return this.http.get<HeroInterFaces[]>(this.heroesUrl).pipe(
+    getAllGeneralInfo(): Observable<HeroInterFaces[]> {
+        const heroAllGeneralInfo = `${this.heroPrefixUrl}/${this.heroGeneralInfo}`;
+        return this.http.get<HeroInterFaces[]>(heroAllGeneralInfo).pipe(
+            tap(() => this.log(`fetched all heroes dashboard`)),
+            catchError(this.handleError('getAllGeneralInfo', []))
+        );
+    }
+
+    getGeneralInfoByID(id: number): Observable<HeroInterFaces> {
+        const heroGeneralInfoByIDUrl = `${this.heroPrefixUrl}/${this.heroGeneralInfo}/${id}`;
+        return this.http.get<HeroInterFaces>(heroGeneralInfoByIDUrl).pipe(
+            tap(hero => this.log(`fetched hero ${hero.nameHero}`)),
+            catchError(this.handleError<HeroInterFaces>('getGeneralInfoByID'))
+        );
+    }
+
+    getHeroesDashBoard(): Observable<HeroInterFaces[]> {
+        const heroDashBoardUrl = `${this.heroPrefixUrl}/${this.heroDashBoard}`;
+        return this.http.get<HeroInterFaces[]>(heroDashBoardUrl).pipe(
             tap(heroes => this.log(`fetched hero : ${heroes}`)),
             catchError(this.handleError('getHeroes', []))
         );
     }
 
     getHeroDetail(id: number): Observable<HeroInterFaces> {
-        const url = `${this.heroesDetailUrl}/${id}`;
-        return this.http.get<HeroInterFaces>(url).pipe(
+        const heroDetailUrl = `${this.heroPrefixUrl}/${this.heroDetail}/${id}`;
+        return this.http.get<HeroInterFaces>(heroDetailUrl).pipe(
             tap(heroes => this.log(`fetched hero : ${heroes}`)),
             catchError(this.handleError<HeroInterFaces>('getHeroDetail'))
         );
     }
 
     getHeroList(): Observable<HeroInterFaces[]> {
-        return this.http.get<HeroInterFaces[]>(this.heroesListUrl).pipe(
+        const heroListUrl = `${this.heroPrefixUrl}/${this.heroList}`;
+        return this.http.get<HeroInterFaces[]>(heroListUrl).pipe(
             tap(heroes => this.log(`fetched list heroes : ${heroes}`)),
             catchError(this.handleError('getListHeroes', []))
-        );
-    }
-
-    getHeroListById(id: number): Observable<HeroInterFaces> {
-        const url = `${this.heroesListUrl}/${id}`;
-        return this.http.get<HeroInterFaces>(url).pipe(
-            tap(hero => this.log(`fetched hero : ${hero.nameHeroes}`)),
-            catchError(this.handleError<HeroInterFaces>('getHeroListById'))
         );
     }
 
     /*delete hero service*/
     deleteHero(hero: HeroInterFaces | number): Observable<HeroInterFaces> {
         const id = typeof hero === 'number' ? hero : hero.id;
-        const url = `${this.heroesUrl}/${id}`;
+        const url = `${this.heroPrefixUrl}/${id}`;
 
         return this.http.delete<HeroInterFaces>(url, httpOptions).pipe(
-            tap(heroes => this.log(`delete Hero  : ${heroes.nameHeroes}`)),
+            tap(heroes => this.log(`delete Hero  : ${heroes.nameHero}`)),
             catchError(this.handleError<HeroInterFaces>('deleteHero'))
         );
     }
 
     /*Update Hero Service*/
-    updateHero(hero: HeroInterFaces): Observable<any> {
-        return this.http.put(this.heroesListUrl, hero, httpOptions).pipe(
-            tap(() => this.log(`updated hero : ${hero.nameHeroes}` )),
-            catchError(this.handleError('updateHeroService'))
-        );
-    }
+    // updateHero(hero: HeroInterFaces): Observable<any> {
+    //     return this.http.put(this.heroesListUrl, hero, httpOptions).pipe(
+    //         tap(() => this.log(`updated hero : ${hero.nameHeroes}` )),
+    //         catchError(this.handleError('updateHeroService'))
+    //     );
+    // }
 
     /** Log a HeroService message with the MessageService */
     private log(message: string) {

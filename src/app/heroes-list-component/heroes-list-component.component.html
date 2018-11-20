@@ -1,5 +1,6 @@
 <ng-progress></ng-progress>
 <div class="container heroesList-container">
+    <button id="js-btn-add-more-hero" class="btn btn-success waves-light" mdbWavesEffect routerLink="/addHero">Add More Hero</button>
     <div class="row">
         <app-card-item (selectHeroToDelete)="deleteHero($event)" [skeleton]="skeleton" [skeletonData]="skeletonData" [heroesData] = "heroProperties"></app-card-item>
     </div>

@@ -6,6 +6,7 @@
 
 .card {
   box-shadow: none;
+  background: transparent!important;
   &.card-cascade {
     .view {
       -webkit-border-radius: 3px;

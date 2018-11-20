@@ -25,15 +25,14 @@
     width: 80%; }
 
 .card-header {
-  height: 85px;
-  background: #ffffff; }
+  height: 85px; }
   .card-header .lover {
     line-height: 50px; }
     .card-header .lover span {
       margin-left: 7px; }
 
 .card-body {
-  height: 511px;
+  height: 505px;
   overflow: hidden;
   padding: 0;
   border-top: 2px solid #F44436;
@@ -80,7 +79,7 @@
         background-image: linear-gradient(90deg, #F4F4F4 0px, rgba(229, 229, 229, 0.8) 40px, #F4F4F4 80px);
         animation: skeleton-screen-header-text 2.5s infinite ease-in-out; }
     .dashboard-content-items.skeleton .card .card-body {
-      height: 511px;
+      height: 505px;
       background-image: linear-gradient(90deg, #F4F4F4 0px, rgba(229, 229, 229, 0.8) 40px, #F4F4F4 80px);
       animation: skeleton-screen-body 2.5s infinite ease-in-out; }
     .dashboard-content-items.skeleton .card .card-footer {

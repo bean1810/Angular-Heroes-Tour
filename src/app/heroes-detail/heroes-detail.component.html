@@ -3,16 +3,16 @@
     <div class="col-md-12">
         <div class="card card-cascade wider reverse">
             <div class="view view-cascade overlay">
-                <img src="{{hero.imagesDetail}}" alt="" class="img-fluid">
+                <img src="../../assets/images/heroes/{{hero.imagesDetail}}" alt="" class="img-fluid">
                 <a>
                     <div class="mask rgba-white-slight waves-effect waves-light"></div>
                 </a>
             </div>
             <div class="card-body card-body-cascade text-center">
-                <h2>{{hero.nameHeroes}}</h2>
+                <h2>{{hero.nameHero}}</h2>
                 <p>{{hero.realName}}, {{hero.Dob}}</p>
                 <div class="Characteristics">
-                    <button *ngFor="let character of hero.Characteristics" mdbBtn type="button" color="{{character.color}}" class="waves-light" mdbWavesEffect>{{character.characteristics}}</button>
+                    <button *ngFor="let character of hero.characteristics" mdbBtn type="button" color="{{character.color}}" class="waves-light" mdbWavesEffect>{{character.characteristics}}</button>
                 </div>
             </div>
 

@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,qBAAqB;EACnB,OAAO,EAAE,aAAa;;AAExB,WAAW;EACT,aAAa,EAAE,IAAI",
+"mappings": "AAAA,qBAAqB;EACnB,OAAO,EAAE,aAAa;;AAExB,WAAW;EACT,aAAa,EAAE,IAAI;;AAErB,qBAAqB;EACnB,MAAM,EAAE,SAAS",
 "sources": ["heroes-list-component.component.scss"],
 "names": [],
 "file": "heroes-list-component.component.css"

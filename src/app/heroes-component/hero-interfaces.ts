@@ -1,17 +1,16 @@
 export class HeroInterFaces {
     id: number;
     avatar: any;
-    nameHeroes: any;
+    nameHero: any;
     color: any;
     realName: any;
     lover: number;
     imagesDashboard: any;
     summary?: any;
-    rank?: number;
     imagesList?: any;
     imagesDetail?: any;
     Dob?: any;
-    Characteristics?: Array<any>;
+    characteristics?: string;
     slogan?: any;
     hashtag?: any;
 }

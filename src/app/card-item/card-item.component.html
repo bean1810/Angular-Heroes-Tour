@@ -5,7 +5,7 @@
       <div class="card">
         <div class="view rgba-white-slight waves-light skeleton-image" routerLink="/detail/{{heroProperties.id}}" mdbWavesEffect>
           <!-- Card img -->
-          <img src="{{heroProperties.imagesList}}" alt="" class="img-responsive img-fluid img--height">
+          <img src="../../assets/images/heroes/{{heroProperties.imagesList}}" alt="" class="img-responsive img-fluid img--height">
           <a> <div class="mask"></div> </a>
         </div>
         <!--Card content-->
@@ -13,7 +13,7 @@
           <!--Title-->
           <mdb-card-title> <h4>{{heroProperties.realName}}</h4> </mdb-card-title>
           <!--Text-->
-          <mdb-card-text>{{heroProperties.summary}}</mdb-card-text>
+          <!--<mdb-card-text>{{heroProperties.summary}}</mdb-card-text>-->
 
           <button class="btn btn-primary waves-light" mdbWavesEffect routerLink="/edit/{{heroProperties.id}}">Edit</button>
           <button class="btn btn-danger waves-light" mdbWavesEffect (click)="selectHeroToDeleteFunc(heroProperties)">Delete</button>

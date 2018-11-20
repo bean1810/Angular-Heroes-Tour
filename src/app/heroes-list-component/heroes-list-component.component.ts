@@ -9,7 +9,7 @@ import {NgProgress, NgProgressRef} from '@ngx-progressbar/core';
     styleUrls: ['./heroes-list-component.component.scss']
 })
 export class HeroesListComponentComponent implements OnInit {
-    heroProperties: HeroInterFaces[];
+    heroProperties: HeroInterFaces[] = [];
     progressRef: NgProgressRef;
     skeleton = false;
     skeletonData = new Array(5);
@@ -28,9 +28,16 @@ export class HeroesListComponentComponent implements OnInit {
         this.progressRef.start();
         this.HeroServices.getHeroList().subscribe(
             heroList => {
-                this.heroProperties = heroList;
-                this.skeleton = true;
-                this.progressRef.complete();
+                this.HeroServices.getAllGeneralInfo().subscribe(
+                    generalInfo => {
+                        for (let i = 0; i < generalInfo['data'].length; i++) {
+                            const result = Object.assign({}, heroList['data'][i], generalInfo['data'][i]);
+                            this.heroProperties.push(result);
+                        }
+                        this.skeleton = true;
+                        this.progressRef.complete();
+                    }
+                );
             }
         );
     }

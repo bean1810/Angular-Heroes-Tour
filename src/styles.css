@@ -15,4 +15,10 @@
 .red {
   background: #E50A15 !important; }
 
+body {
+  background-image: url("/assets/images/pattern.gif");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: repeat-y; }
+
 /*# sourceMappingURL=styles.css.map */

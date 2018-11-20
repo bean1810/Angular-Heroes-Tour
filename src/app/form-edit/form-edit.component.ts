@@ -15,6 +15,7 @@ export class FormEditComponent implements OnInit {
     validatingForm: FormGroup;
     submitted = false;
     progressRef: NgProgressRef;
+
     constructor(private heroServices: HeroService, private route: ActivatedRoute
         , private formBuilder: FormBuilder, private router: Router, public ngProgress: NgProgress) {
     }
@@ -27,7 +28,7 @@ export class FormEditComponent implements OnInit {
             realName: [null, [Validators.required]],
             slogan: [null, [Validators.required]],
             hashtag: [null, [Validators.required]],
-            lover: [null, [Validators.required]]
+            lover: [null, [Validators.required]],
         });
     }
 
@@ -40,10 +41,9 @@ export class FormEditComponent implements OnInit {
     getHeroToEdit() {
         this.progressRef.start();
         const id = +this.route.snapshot.paramMap.get('id');
-        this.heroServices.getHeroListById(id).subscribe(
-            heroDetail => {
-                this.heroToEdit = heroDetail;
-                this.progressRef.complete();
+        this.heroServices.getHeroesDashBoard().subscribe(
+            heroesDashBoard => {
+                console.log(heroesDashBoard);
             }
         );
     }
@@ -54,12 +54,6 @@ export class FormEditComponent implements OnInit {
             return;
         }
         this.progressRef.start();
-        this.heroServices.updateHero(this.heroToEdit).subscribe(
-            () => {
-                this.progressRef.complete();
-                this.navigateToHeroList();
-            }
-        );
     }
 
     navigateToHeroList() {

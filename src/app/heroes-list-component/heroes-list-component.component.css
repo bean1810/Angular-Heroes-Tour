@@ -4,4 +4,7 @@
 .card-items {
   margin-bottom: 50px; }
 
+#js-btn-add-more-hero {
+  margin: 0 0 5px 0; }
+
 /*# sourceMappingURL=heroes-list-component.component.css.map */

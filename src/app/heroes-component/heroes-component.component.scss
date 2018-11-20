@@ -32,7 +32,7 @@
 
 .card-header {
   height: 85px;
-  background: #ffffff;
+  //background: #ffffff;
   .lover {
     line-height: 50px;
     span {
@@ -42,7 +42,7 @@
 }
 
 .card-body {
-  height: 511px;
+  height: 505px;
   overflow: hidden;
   padding: 0;
   border-top: 2px solid #F44436;
@@ -109,7 +109,7 @@ $animation-duration: 2.0s;
 
     }
     .card-body {
-      height: 511px;
+      height: 505px;
       @include background-gradient;
       animation: skeleton-screen-body 2.5s infinite ease-in-out;
     }

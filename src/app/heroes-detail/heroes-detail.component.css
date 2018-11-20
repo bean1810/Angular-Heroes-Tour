@@ -4,7 +4,8 @@
   padding-left: 50px; }
 
 .card {
-  box-shadow: none; }
+  box-shadow: none;
+  background: transparent !important; }
   .card.card-cascade .view {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;

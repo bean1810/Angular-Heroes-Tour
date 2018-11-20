@@ -14,9 +14,8 @@ import {CardItemComponent} from './card-item/card-item.component';
 import {HeroesDetailComponent} from './heroes-detail/heroes-detail.component';
 
 import {HttpClientModule} from '@angular/common/http';
-import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
-import {InMemoryDataService} from './app-services/in-memory-data-service/in-memory-data.service';
 import {FormEditComponent} from './form-edit/form-edit.component';
+import { AddHeroComponent } from './add-hero/add-hero.component';
 
 @NgModule({
     declarations: [
@@ -29,6 +28,7 @@ import {FormEditComponent} from './form-edit/form-edit.component';
         CardItemComponent,
         HeroesDetailComponent,
         FormEditComponent,
+        AddHeroComponent,
     ],
     imports: [
         BrowserModule,
@@ -43,13 +43,7 @@ import {FormEditComponent} from './form-edit/form-edit.component';
             meteor: false
         }),
         AppRoutingModule,
-        HttpClientModule,
-        // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
-        // and returns simulated server responses.
-        // Remove it when a real server is ready to receive requests.
-        HttpClientInMemoryWebApiModule.forRoot(
-            InMemoryDataService, {dataEncapsulation: false}
-        )
+        HttpClientModule
     ],
     schemas: [NO_ERRORS_SCHEMA],
     providers: [],

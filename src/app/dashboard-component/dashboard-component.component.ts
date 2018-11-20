@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class DashboardComponent implements OnInit {
-
+  title = 'the most favorite superheroes in the Marvel Cinematic Universe';
   constructor() { }
 
   ngOnInit() {
