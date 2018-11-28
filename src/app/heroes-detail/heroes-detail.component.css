@@ -23,7 +23,9 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15); }
 
 .introduce {
-  margin: 5% 2%; }
+  margin: 5% 2%;
+  color: #ffffff;
+  font-weight: 400; }
 
 /*TODO : Add this to single file*/
 /*Skeleton Screen Animation*/

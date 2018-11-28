@@ -29,10 +29,14 @@ export class HeroesDetailComponent implements OnInit {
         const id = +this.route.snapshot.paramMap.get('id');
         this.HeroServices.getHeroDetail(id).subscribe(
             heroDetail => {
-                this.hero = heroDetail['data'];
-                this.hero.characteristics = JSON.parse(this.hero.characteristics);
-                this.progressRef.complete();
-                this.skeleton = true;
+                this.HeroServices.getGeneralInfoByID(id).subscribe(
+                    generalHero => {
+                        heroDetail['data'].characteristics = JSON.parse(heroDetail['data'].characteristics);
+                        this.hero = Object.assign({}, heroDetail['data'], generalHero['data']);
+                        this.progressRef.complete();
+                        this.skeleton = true;
+                    }
+                );
             }
         );
     }

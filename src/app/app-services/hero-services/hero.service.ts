@@ -47,6 +47,14 @@ export class HeroService {
         );
     }
 
+    getHeroesDashBoardById(id: number): Observable<HeroInterFaces> {
+        const heroDashBoardUrl = `${this.heroPrefixUrl}/${this.heroDashBoard}/${id}`;
+        return this.http.get<HeroInterFaces>(heroDashBoardUrl).pipe(
+            tap(hero => this.log(`fetched heroes : ${hero}`)),
+            catchError(this.handleError<HeroInterFaces>('getHeroesDashBoardById'))
+        );
+    }
+
     getHeroDetail(id: number): Observable<HeroInterFaces> {
         const heroDetailUrl = `${this.heroPrefixUrl}/${this.heroDetail}/${id}`;
         return this.http.get<HeroInterFaces>(heroDetailUrl).pipe(

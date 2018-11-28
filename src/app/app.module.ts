@@ -15,7 +15,6 @@ import {HeroesDetailComponent} from './heroes-detail/heroes-detail.component';
 
 import {HttpClientModule} from '@angular/common/http';
 import {FormEditComponent} from './form-edit/form-edit.component';
-import { AddHeroComponent } from './add-hero/add-hero.component';
 
 @NgModule({
     declarations: [
@@ -28,7 +27,6 @@ import { AddHeroComponent } from './add-hero/add-hero.component';
         CardItemComponent,
         HeroesDetailComponent,
         FormEditComponent,
-        AddHeroComponent,
     ],
     imports: [
         BrowserModule,

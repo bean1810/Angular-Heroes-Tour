@@ -11,6 +11,7 @@
         <!-- Card content -->
         <div class="card-body">
             <form [formGroup]="validatingForm" (ngSubmit)="onSubmit()">
+                <!--Name Hero Input-->
                 <div class="md-form">
                     <i class="fa fa-user-secret prefix"></i>
                     <input minLength="5" maxLength="25" type="text" class="form-control"
@@ -22,6 +23,7 @@
                         <div *ngIf="f.nameHero.errors.required">Name Hero is Required</div>
                     </div>
                 </div>
+                <!--Real Name Input-->
                 <div class="md-form">
                     <i class="fa fa-user prefix"></i>
                     <input minLength="5" maxLength="25" type="text" class="form-control"
@@ -34,6 +36,7 @@
                     </div>
 
                 </div>
+                <!--Slogan Inpur-->
                 <div class="md-form">
                     <i class="fa fa-quote-left prefix"></i>
                     <input minLength="5" maxLength="255" type="text" class="form-control"
@@ -45,6 +48,7 @@
                         <div *ngIf="f.slogan.errors.required">Slogan is Required</div>
                     </div>
                 </div>
+                <!--HashTag Input-->
                 <div class="md-form">
                     <i class="fa fa-hashtag prefix"></i>
                     <input minLength="5" maxLength="25" type="email" class="form-control"
@@ -56,6 +60,7 @@
                         <div *ngIf="f.hashtag.errors.required">Hashtag is Required</div>
                     </div>
                 </div>
+                <!--Lover Input-->
                 <div class="md-form">
                     <i class="fa fa-heart prefix"></i>
                     <input minLength="10" maxLength="25" type="number" class="form-control"
@@ -65,6 +70,18 @@
                     <label for="form5">Type your love number</label>
                     <div *ngIf="submitted && f.lover.errors" class="invalid-feedback">
                         <div *ngIf="f.lover.errors.required">Number of lover is Required</div>
+                    </div>
+                </div>
+                <!--Summary Input-->
+                <div class="md-form">
+                    <textarea type="text" id="form6" class="md-textarea md-textarea-auto form-control"
+                              formControlName="summary" name="summary"
+                              [ngClass]="{'is-invalid' : submitted && f.summary.errors}" mdbInputDirective
+                              [mdbValidate]="false"
+                    ></textarea>
+                    <label for="form6">Type summary hero</label>
+                    <div *ngIf="submitted && f.summary.errors" class="invalid-feedback">
+                        <div *ngIf="f.summary.errors.required">Summary is Required</div>
                     </div>
                 </div>
             </form>

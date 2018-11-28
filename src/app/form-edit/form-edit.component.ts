@@ -29,6 +29,8 @@ export class FormEditComponent implements OnInit {
             slogan: [null, [Validators.required]],
             hashtag: [null, [Validators.required]],
             lover: [null, [Validators.required]],
+            Dob: [null, [Validators.required]],
+            summary: [null, [Validators.required]]
         });
     }
 
@@ -41,9 +43,19 @@ export class FormEditComponent implements OnInit {
     getHeroToEdit() {
         this.progressRef.start();
         const id = +this.route.snapshot.paramMap.get('id');
-        this.heroServices.getHeroesDashBoard().subscribe(
+        this.heroServices.getHeroesDashBoardById(id).subscribe(
             heroesDashBoard => {
-                console.log(heroesDashBoard);
+                this.heroServices.getGeneralInfoByID(id).subscribe(
+                    generalInfo => {
+                        this.heroServices.getHeroDetail(id).subscribe(
+                            heroDetail => {
+                                this.heroToEdit = Object.assign({}, heroesDashBoard['data'], generalInfo['data'], heroDetail['data']);
+                                console.log(this.heroToEdit);
+                                this.progressRef.complete();
+                            }
+                        );
+                    }
+                );
             }
         );
     }
