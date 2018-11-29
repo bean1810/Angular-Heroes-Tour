@@ -29,7 +29,6 @@ export class FormEditComponent implements OnInit {
             slogan: [null, [Validators.required]],
             hashtag: [null, [Validators.required]],
             lover: [null, [Validators.required]],
-            Dob: [null, [Validators.required]],
             summary: [null, [Validators.required]]
         });
     }
@@ -66,6 +65,14 @@ export class FormEditComponent implements OnInit {
             return;
         }
         this.progressRef.start();
+        this.heroServices.updateHeroFunc(this.heroToEdit).subscribe(
+            _ => {
+                this.progressRef.complete();
+                setTimeout(() => {
+                    this.router.navigate(['dashboard']);
+                }, 1000);
+            }
+        );
     }
 
     navigateToHeroList() {

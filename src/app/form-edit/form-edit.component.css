@@ -19,5 +19,7 @@
       border-bottom: 1px solid #F44436; }
     .edit-container .card .card-body .invalid-feedback {
       margin-left: 2.5rem; }
+  .edit-container input {
+    padding-bottom: 5px !important; }
 
 /*# sourceMappingURL=form-edit.component.css.map */

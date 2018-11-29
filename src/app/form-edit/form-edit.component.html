@@ -17,7 +17,7 @@
                     <input minLength="5" maxLength="25" type="text" class="form-control"
                            id="form1" name="nameHero" formControlName="nameHero"
                            [ngClass]="{ 'is-invalid': submitted && f.nameHero.errors }" mdbInputDirective
-                           [mdbValidate]="false"/>
+                           [mdbValidate]="false" [(ngModel)]="heroToEdit.nameHero" />
                     <label for="form1">Type your hero name</label>
                     <div *ngIf="submitted && f.nameHero.errors" class="invalid-feedback">
                         <div *ngIf="f.nameHero.errors.required">Name Hero is Required</div>
@@ -29,7 +29,7 @@
                     <input minLength="5" maxLength="25" type="text" class="form-control"
                            id="form2.1" name="realName" formControlName="realName"
                            [ngClass]="{'is-invalid' : submitted && f.realName.errors}" mdbInputDirective
-                           [mdbValidate]="false"/>
+                           [mdbValidate]="false" [(ngModel)]="heroToEdit.realName"/>
                     <label for="form2.1">Type your hero real name</label>
                     <div *ngIf="submitted && f.realName.errors" class="invalid-feedback">
                         <div *ngIf="f.realName.errors.required">Real Name of Hero is Required</div>
@@ -42,7 +42,7 @@
                     <input minLength="5" maxLength="255" type="text" class="form-control"
                            id="form3" name="slogan" formControlName="slogan"
                            [ngClass]="{'is-invalid' : submitted && f.slogan.errors}" mdbInputDirective
-                           [mdbValidate]="false"/>
+                           [mdbValidate]="false" [(ngModel)]="heroToEdit.slogan"/>
                     <label for="form3">Type your slogan</label>
                     <div *ngIf="submitted && f.slogan.errors" class="invalid-feedback">
                         <div *ngIf="f.slogan.errors.required">Slogan is Required</div>
@@ -54,7 +54,7 @@
                     <input minLength="5" maxLength="25" type="email" class="form-control"
                            id="form4" name="hashtag" formControlName="hashtag"
                            [ngClass]="{'is-invalid' : submitted && f.hashtag.errors}" mdbInputDirective
-                           [mdbValidate]="false"/>
+                           [mdbValidate]="false" [(ngModel)]="heroToEdit.hashtag"/>
                     <label for="form4">Type your hashtag</label>
                     <div *ngIf="submitted && f.hashtag.errors" class="invalid-feedback">
                         <div *ngIf="f.hashtag.errors.required">Hashtag is Required</div>
@@ -66,7 +66,7 @@
                     <input minLength="10" maxLength="25" type="number" class="form-control"
                            id="form5" formControlName="lover" name="lover"
                            [ngClass]="{'is-invalid' : submitted && f.lover.errors}" mdbInputDirective
-                           [mdbValidate]="false"/>
+                           [mdbValidate]="false" [(ngModel)]="heroToEdit.lover"/>
                     <label for="form5">Type your love number</label>
                     <div *ngIf="submitted && f.lover.errors" class="invalid-feedback">
                         <div *ngIf="f.lover.errors.required">Number of lover is Required</div>
@@ -77,7 +77,7 @@
                     <textarea type="text" id="form6" class="md-textarea md-textarea-auto form-control"
                               formControlName="summary" name="summary"
                               [ngClass]="{'is-invalid' : submitted && f.summary.errors}" mdbInputDirective
-                              [mdbValidate]="false"
+                              [mdbValidate]="false" [(ngModel)]="heroToEdit.summary"
                     ></textarea>
                     <label for="form6">Type summary hero</label>
                     <div *ngIf="submitted && f.summary.errors" class="invalid-feedback">

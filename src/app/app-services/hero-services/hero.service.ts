@@ -19,7 +19,7 @@ export class HeroService {
     private heroDashBoard = 'getAllHeroesInDashboard';
     private heroList = 'getAllHeroesList';
     private heroDetail = 'getHeroDetail';
-
+    private updateHero = 'updateHero';
     constructor(private http: HttpClient, private messageService: MessagesService) {
     }
 
@@ -83,12 +83,13 @@ export class HeroService {
     }
 
     /*Update Hero Service*/
-    // updateHero(hero: HeroInterFaces): Observable<any> {
-    //     return this.http.put(this.heroesListUrl, hero, httpOptions).pipe(
-    //         tap(() => this.log(`updated hero : ${hero.nameHeroes}` )),
-    //         catchError(this.handleError('updateHeroService'))
-    //     );
-    // }
+    updateHeroFunc(hero: HeroInterFaces): Observable<any> {
+        const url = `${this.heroPrefixUrl}/${this.updateHero}`;
+        return this.http.put(url, hero, httpOptions).pipe(
+            tap(() => this.log(`updated hero :` )),
+            catchError(this.handleError('updateHeroService'))
+        );
+    }
 
     /** Log a HeroService message with the MessageService */
     private log(message: string) {

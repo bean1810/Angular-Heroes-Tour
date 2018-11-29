@@ -12,9 +12,6 @@
         <div class="card-body">
           <!--Title-->
           <mdb-card-title> <h4>{{heroProperties.realName}}</h4> </mdb-card-title>
-          <!--Text-->
-          <!--<mdb-card-text>{{heroProperties.summary}}</mdb-card-text>-->
-
           <button class="btn btn-primary waves-light" mdbWavesEffect routerLink="/edit/{{heroProperties.id}}">Edit</button>
           <button class="btn btn-danger waves-light" mdbWavesEffect (click)="selectHeroToDeleteFunc(heroProperties)">Delete</button>
         </div>
